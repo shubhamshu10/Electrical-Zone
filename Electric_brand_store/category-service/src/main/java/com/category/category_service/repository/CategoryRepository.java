@@ -1,0 +1,14 @@
+package com.category.category_service.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+//import org.springframework.data.jpa.repository.Query;
+
+import com.category.category_service.entity.Category;
+
+public interface CategoryRepository extends JpaRepository<Category, Integer>{
+	//@Query("select c from category c where c.category_name=:category_name")
+	Optional<Category> findByName(String category_name);
+
+}
